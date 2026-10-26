@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS ads (
+    id TEXT PRIMARY KEY,
+    webpage_url TEXT,
+    publication_date timestamptz,
+    application_deadline timestamptz,
+    removed BOOLEAN NOT NULL DEFAULT false,
+    removed_date timestamptz,
+    headline TEXT,
+    description_text TEXT,
+    employer_name TEXT,
+    employer_organization_number TEXT,
+    workplace_address_municipality TEXT,
+    workplace_address_region TEXT,
+    occupation_label TEXT,
+    occupation_group_label TEXT,
+    employment_type_label TEXT,
+    working_hours_type_label TEXT,
+    raw jsonb NOT NULL,
+    ingested_at timestamptz NOT NULL DEFAULT now()
+);
